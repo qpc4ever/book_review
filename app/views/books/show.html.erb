@@ -1,13 +1,13 @@
 <h2><%= @book.title %></h2>
-<h3><%= @book.author %></h3>
+<h3>By: <%= @book.author %></h3>
 <h4><%= @book.category.name %></h4>
 <p><%= @book.description %></p>
 
-<%= link_to " Back", root_path, class: 'btn btn-default fa fa-arrow-left fa-2x', style: 'background-color:black;' %>
+<%= link_to " Back", root_path, class: 'btn btn-default fa fa-arrow-left fa-2x', style: 'background-color:black; color:white' %>
 
 <% if user_signed_in? %>
 <% if @book.user_id == current_user.id %>
-  <%= link_to " Edit", edit_book_path(@book), class: 'btn btn-default fa fa-edit fa-2x' , style: 'background-color:black;' %>
-  <%= link_to " Delete", book_path(@book), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default fa fa-trash fa-2x' , style: 'background-color:black;' %>
+  <%= link_to " Edit", edit_book_path(@book), class: 'btn btn-default fa fa-edit fa-2x' , style: 'background-color:black; color:white;' %>
+  <%= link_to " Delete", book_path(@book), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default fa fa-trash fa-2x' , style: 'background-color:black; color:white;' %>
 <% end %>
 <% end %>
