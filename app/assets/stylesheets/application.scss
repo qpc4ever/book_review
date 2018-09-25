@@ -17,6 +17,17 @@
  @import "font-awesome";
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+.book-show {
+    height: 475px;
+    width: 325px;
+}
+
+.book {
+    height: 350px;
+    width: 250px;
+}
+
  body {
 	background-color: 1px solid rgb(233, 210, 7);
 	font-family: 'Playfair Display', serif;
