@@ -9,6 +9,9 @@
 <div class="col-md-8">
 <h2><%= @book.title %></h2>
 <h3>By: <%= @book.author %></h3>
+<h2>Average Rating</h2>
+<div class="average-review-rating" data-score=<%= @average_review %>></div>
+<span>Based on <%= @book.reviews.count %> reviews</span>
 <h4><%= @book.category.name %></h4>
 <p><%= @book.description %></p>
 </div>
@@ -31,3 +34,23 @@
   <%= link_to " Delete", book_path(@book), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default fa fa-trash fa-2x' , style: 'background-color:black; color:white;' %>
 <% end %>
 <% end %>
+<script>
+	$('.review-rating').raty({
+		readOnly: true,
+		score: function() {
+			return $(this).attr('data-score');
+		},
+		path: '/assets/'
+	});
+</script>
+
+
+<script>
+	$('.average-review-rating').raty({
+		readOnly: true,
+		path: '/assets/',
+		score: function() {
+			return $(this).attr('data-score')
+		}
+	});
+</script>
