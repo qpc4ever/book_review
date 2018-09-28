@@ -5,8 +5,8 @@
   <% if user_signed_in? %>
     <% if review.user_id == current_user.id %>
       <div class="links btn-group">
-  <%= link_to "  Edit", edit_book_review_path(review.book, review), class: 'btn btn-default fa fa-edit fa-2x' , style: 'background-color:black; color:white;' %>
-  <%= link_to "  Delete", book_review_path(review.book, review), method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-default fa fa-trash fa-2x' , style: 'background-color:black; color:white;' %>
+  <%= link_to "  Edit", edit_book_review_path(review.book, review), class: 'btn btn-danger fa fa-edit fa-2x' , style: 'background-color:black; color:white;' %>
+  <%= link_to "  Delete", book_review_path(review.book, review), method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-danger fa fa-trash fa-2x' , style: 'background-color:black; color:white;' %>
       </div>  
   <% end %>
     <% end %>
